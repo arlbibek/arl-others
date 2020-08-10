@@ -3,15 +3,18 @@ def ynq(question=None):
     while True:
         print(question)
         try:
-            ans = input('(y/n)[RETURN = y]: ')
+            ans = input('(y/n)[RETURN = y]: ').lower().strip(' ')
         except KeyboardInterrupt:
             exit('\nAbort!')
-        if ans in ['y', 'Y', 'yes', 'Yes', 'YES'] or len(ans) < 1:
+        if ans in ['y', 'yes'] or len(ans) < 1:
             return True
-        elif ans in ['n', 'N', 'no', 'No', 'NO']:
+        elif ans in ['n', 'no']:
             return False
         print("Invalid Input!!\nEnter 'y' for 'Yes' or 'n' for 'No'")
         continue
 
 
-print(ynq('Is the sky blue?'))
+if ynq('Is the sky blue?'):
+    print('Have a nice day!')
+    exit('Bye..')
+exit('Bye..')
