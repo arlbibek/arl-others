@@ -8,7 +8,7 @@ Chapter 01, Verse 01
 
 ### धृतराष्ट्र उवाच |धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः |मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ||1||
 
-> ### dhṛitarāśhtra uvācha dharma-kṣhetre kuru-kṣhetre samavetā yuyutsavaḥ māmakāḥ pāṇḍavāśhchaiva kimakurvata sañjaya
+> dhṛitarāśhtra uvācha dharma-kṣhetre kuru-kṣhetre samavetā yuyutsavaḥ māmakāḥ pāṇḍavāśhchaiva kimakurvata sañjaya
 > ---
 > - dhṛitarāśhtraḥ uvācha — Dhritarashtra said
 > - dharma-kṣhetre — the land of dharma
