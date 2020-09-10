@@ -2,7 +2,7 @@ Bhagavad Gita, The Song of God
 ==============================
 
 ----------------------------
-Chapter 1 : Arjun Viṣhād Yog
+## Chapter 1 : Arjun Viṣhād Yog
 
 Chapter 1, Verse 45-46
 ----------------------
@@ -64,7 +64,7 @@ Arjun’s reluctance to fight the war had now reached its climax. He had now sur
 
 
 -----------------------
-Chapter 2 : Sānkhya Yog
+## Chapter 2 : Sānkhya Yog
 
 Chapter 2, Verse 1
 ------------------
