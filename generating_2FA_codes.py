@@ -1,5 +1,5 @@
 # Generet 6 digit Two Factor Authencatation Codes
-def get_2fa_fastter():
+def main():
     """Generating 6 digit Two Factor Authencatiion Codes"""
     with open('2FA_code.txt', 'wt') as fa:
         for n in range(100000, 1000000):
@@ -12,4 +12,4 @@ def get_2fa_fastter():
         exit()
 
 
-get_2fa_fastter()
+main()

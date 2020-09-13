@@ -1,24 +1,36 @@
-# auto arrange name
-filename = 'names.txt'  # input("Enter file name(with file extension): ")
-while True:
-    try:
-        fh = open(filename, 'rt')
-        break
-    except Exception:
-        print("Error: Ccouldn't locate {} \nTry again.".format(filename))
-        filename = input("Enter file name(with extension): ")
-        continue
-    except KeyboardInterrupt: exit("Abort!")
-names = list()
-for line in fh:
-    names.append(line.strip())
-names.sort()
+# auto arrange lines of a file in a Ascending or ddescending order
+from sys import argv
+desc = True if argv[-1] == '-d' else False
+pyfile = __file__.split('\\')[-1]
 
-with open('sorted_' + filename, 'wt') as f:
-    f.write('Sorted list of names.\n')
-    for name in names:
-        f.write(name + '\n')
-print(names)
-print('\nYour names has been sorted in ascending order.')
-print("Check 'sorted_" + filename)
-exit('Bye..')
+order = 'Descending' if desc else 'Ascending'
+if not desc: print(
+    f"USE ARGUMENT:\n-d \t- to sort contents in Descending order.\n\t  Eg.{pyfile} -d")
+
+
+def sort_lines():
+    while True:
+        try:
+            filename = input(
+                f"Enter name of the file to sort in {order} order: ")
+            lines = open(filename, 'rt')
+            break
+        except FileNotFoundError:
+            print(f"Error: Couldn't locate {filename}")
+            continue
+        except KeyboardInterrupt: exit("Abort!")
+    next(lines)  # Skip first line
+    lines = [line.strip() for line in lines]
+    lines.sort(reverse=desc)
+
+    # Writhing new sorted items
+    with open('sorted_' + filename, 'wt') as sor:
+        for line in lines:
+            sor.write(f'{line}\n')
+    print(
+        f'\nContents of the the file {filename} has been sorted in {order} order.')
+    print(f'Check sorted_{filename}')
+    exit('Bye..')
+
+
+sort_lines()
