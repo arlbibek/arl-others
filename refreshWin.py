@@ -1,4 +1,14 @@
-import pyautogui
+print("""Name: refreshWin.py
+
+'''Refresh windws 'n' numbers of times.'''
+
+Requirements: pyautogui
+""")
+
+# TODO: Check if the program is being run on windows or not.
+
+try: import pyautogui
+except ModuleNotFoundError as e: exit(e)
 
 
 def refreshWin():
@@ -6,6 +16,8 @@ def refreshWin():
     while True:
         try:
             n = int(input('How many times do you want to refresh windows?\n: '))
+            print(f'Windows will be refreshed {n} times.')
+            input('Press [RETURN] to continue..')
             break
         except ValueError:
             print("Enter an positive Integer!")
@@ -18,7 +30,11 @@ def refreshWin():
             pyautogui.click(x=1472, y=253)
         pyautogui.hotkey('win', 'd')
         print('Refreshed', i + 1, 'times.')
-    exit('Done!')
 
 
-refreshWin()11
+refreshWin()
+
+print("\n[ Done ]")
+exit('\nBye..')
+
+# The End.
