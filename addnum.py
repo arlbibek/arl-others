@@ -12,8 +12,6 @@ To:
     2. This a second line
     3. I'm line three
     4. Yay Fourth
-
-Requirements: None
 """)
 
 
@@ -21,17 +19,17 @@ def addnum():
     '''Add auto increment numbers on each lines of a text file'''
     while True:
         try:
-            try:
-                file = input('Enter filename (path): ')
-                print(
-                    f"A sequence of numbers 1. 2. 3. ... will be added to each line of the file '{file}'")
-                input('Press [RETURN] to continue..')
+            try: file = input('Enter filename (path): ')
             except KeyboardInterrupt: exit('Abort!')
             with open(file, 'rt', encoding="utf8") as fh:
-                num = 1
+                print(
+                    f"A sequence of numbers 1. 2. 3. ... will be added to each line of the file '{file}'")
+                try: input('Press [RETURN] to continue..')
+                except KeyboardInterrupt: exit('Abort!')
+                num = 0
                 lines = fh.readlines()
                 for line in lines:
-                    num_fill = str(num).zfill(len(str(len(lines))))
+                    num_fill = str(num + 1).zfill(len(str(len(lines))))
                     if not line.startswith(num_fill):
                         lines[lines.index(line)] = num_fill + '. ' + line
                     num += 1
@@ -40,8 +38,9 @@ def addnum():
     with open(file, 'wt', encoding="utf8") as fh:
         for line in lines:
             fh.write(line)
-    print('Lines: ', num - 1)
-    print(f'{file} updated!')
+    print('Lines: ', num)
+    if num < 1: print('Noting to write!')
+    else: print(f"'{file}' updated!")
 
 
 addnum()

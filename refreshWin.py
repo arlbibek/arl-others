@@ -16,12 +16,8 @@ def refreshWin():
     while True:
         try:
             n = int(input('How many times do you want to refresh windows?\n: '))
-            print(f'Windows will be refreshed {n} times.')
-            input('Press [RETURN] to continue..')
             break
-        except ValueError:
-            print("Enter an positive Integer!")
-            continue
+        except ValueError: print("Enter an positive Integer!")
         except KeyboardInterrupt: exit('Abort!')
     if not n < 1:
         pyautogui.hotkey('win', 'd')
