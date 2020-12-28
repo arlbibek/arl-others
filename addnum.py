@@ -1,4 +1,4 @@
-print("""Name: addnum.py
+print(f"""{__file__}
 
 '''Add an auto increment numbers on each lines of a text file.'''
 

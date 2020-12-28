@@ -1,36 +1,34 @@
-print("""Name: refreshWin.py
+# Refresh windws 'n' numbers of times.
+# Requirements: pyautogui
+
+def refreshWin(n):
+    '''Refresh windows n numbers of times
+    Requrement: pyautogui'''
+    from pyautogui import hotkey, rightClick, click
+    from platform import system as pfsys
+
+    if pfsys().lower().startswith('windows'):
+        if not n < 1:
+            hotkey('win', 'd')
+            for i in range(n):
+                rightClick(x=1442, y=190)
+                click(x=1472, y=253)
+            hotkey('win', 'd')
+            print('Refreshed', i + 1, 'time(s).')
+    else: print("Couldn't refresh on a none Windows system.")
+
+
+if __name__ == '__main__':
+    from os.path import basename
+    print(f"""Name: {basename(__file__)}
 
 '''Refresh windws 'n' numbers of times.'''
 
 Requirements: pyautogui
 """)
 
-# TODO: Check if the program is being run on windows or not.
-
-try: import pyautogui
-except ModuleNotFoundError as e: exit(e)
-
-
-def refreshWin():
-    '''Refresh windows n numbers of times'''
-    while True:
-        try:
-            n = int(input('How many times do you want to refresh windows?\n: '))
-            break
-        except ValueError: print("Enter an positive Integer!")
-        except KeyboardInterrupt: exit('Abort!')
-    if not n < 1:
-        pyautogui.hotkey('win', 'd')
-        for i in range(n):
-            pyautogui.rightClick(x=1442, y=190)
-            pyautogui.click(x=1472, y=253)
-        pyautogui.hotkey('win', 'd')
-        print('Refreshed', i + 1, 'times.')
-
-
-refreshWin()
-
-print("\n[ Done ]")
-exit('\nBye..')
+    try: refreshWin(int(input('How many times do your want refresh windows?\n:')))
+    except Exception as e: print(e)
+    except KeyboardInterrupt: exit('Abort!')
 
 # The End.
