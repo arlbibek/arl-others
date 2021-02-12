@@ -103,4 +103,8 @@ if count != 0:
     msg = f'{count} files renamed.'
 
 print(f"\n[ Done ] {msg}")
+
+# Pausing the porgram at the end
+if __name__ == '__main__': input()
+
 # The End.

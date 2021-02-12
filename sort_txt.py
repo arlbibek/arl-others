@@ -79,5 +79,8 @@ open(f'{filepath}', 'wt')  # Clearing the contents of the file
 for line in sorted_lines:
     with open(f'{filepath}', 'at') as fh:
         fh.write(f'{line}\n')
-exit(
+print(
     f"\n[ Done ] The contents of the file '{filename}' has been sorted to {'descending' if desc is True else 'ascending'} order.")
+
+# Pausing the porgram at the end
+if __name__ == '__main__': input()

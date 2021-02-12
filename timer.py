@@ -25,3 +25,6 @@ if __name__ == '__main__':
         print('[ Done ] Bye..')
     except Exception as e: exit(e)
     except KeyboardInterrupt: exit('Abort!')
+
+# Pausing the porgram at the end
+if __name__ == '__main__': input()
