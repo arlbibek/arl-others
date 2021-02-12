@@ -19,6 +19,7 @@ def refreshWin(n):
 
 
 if __name__ == '__main__':
+    from sys import argv
     from os.path import basename
     print(f"""Name: {basename(__file__)}
 
@@ -27,7 +28,9 @@ if __name__ == '__main__':
 Requirements: pyautogui
 """)
 
-    try: refreshWin(int(input('How many times do your want refresh windows?\n:')))
+    try:
+        if len(argv) > 1: refreshWin(int(argv[1].strip().strip('-')))
+        else: refreshWin(int(input('How many times do your want refresh windows?\n:')))
     except Exception as e: print(e)
     except KeyboardInterrupt: exit('Abort!')
 
