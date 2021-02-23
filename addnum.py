@@ -43,9 +43,9 @@ def addnum():
     else: print(f"'{file}' updated!")
 
 
-addnum()
-
-print("\n[ Done ]")
-exit('\nBye..')
+if __name__ = "__main__":
+    addnum()
+    print("\n[ Done ]")
+    exit('\nBye..')
 
 # The End.
