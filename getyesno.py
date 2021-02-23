@@ -1,4 +1,4 @@
-def ynq(question='Continue'):
+def getyesno(question='Continue'):
     """Returns 'True' if input is 'yes', 'False' if 'no'"""
     print()
     if not question.endswith('?'): question += '?'
