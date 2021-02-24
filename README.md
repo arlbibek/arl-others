@@ -70,7 +70,7 @@ Returns `True` if input from the user is `yes`, `False` if `no`, that is all.
 
 ## refreshWin.py
 
-Automatically refresh windows any numbers of times.
+A simple and fun program that refresh windows any numbers of times.
 
 ```
 Requirements:

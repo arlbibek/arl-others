@@ -29,6 +29,8 @@ def dirpath():
 
 
 def main():
+    from os.path import basename
+    
     menu = {}
     menu[1] = 'Get file path'
     menu[2] = 'Get directory path'
@@ -43,10 +45,6 @@ def main():
         if option in [k for k in menu.keys()]: return option
         print(
             f'\n# Value out of range!\n  Choose one of {[k for k in menu.keys()]}.\n')
-
-
-if __name__ == "__main__":
-    from os.path import basename
     choosen = main()
     if choosen == 1:
         path = filepath()
@@ -55,3 +53,8 @@ if __name__ == "__main__":
         path = dirpath()
         print(f"\nDirectory path: {path}\nDirectory name: {basename(path)}")
     else: exit('Bye..')
+
+
+if __name__ == "__main__": main()
+
+# The end.
