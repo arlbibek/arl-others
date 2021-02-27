@@ -30,8 +30,8 @@ Options `(edit source code to select different option)`
 4. Write contains of the clipboard! (default)
 
 ```
-Requirements: 
-    pyautogui 
+Requirements:
+    pyautogui
     pyperclip   # for Option 4
 ```
 
@@ -56,11 +56,10 @@ Returns the list of every file in a directory tree.
 Get either file path or directory path from the user.
 
 ```
-filepath() 
+filepath()
 # Ask for a file path to the user then, returns the absolute path of the file if it exist.
-```
-```
-dirpath():
+
+dirpath()
 # Asks for a directory path to the user then, returns absolute path of the directory if it exists.
 ```
 
@@ -73,8 +72,7 @@ Returns `True` if input from the user is `yes`, `False` if `no`, that is all.
 A simple and fun program that refresh windows any numbers of times.
 
 ```
-Requirements:
-    pyautogui
+Requirements: pyautogui
 ```
 
 ## renamefiles.py
@@ -82,7 +80,7 @@ Requirements:
 Rename all file on a folder to randomly generated 6 digit code.
 
 ```
-Eg: 
+Eg:
     __fjdsl7439fRHzzt77UUvfTRe7362.png ==> 544305.png
 ```
 
@@ -90,6 +88,19 @@ Eg:
 
 Sort contents of a text file into ascending or descending order.
 
-## timer.py 
+## timer.py
 
-A cli timer that prints like clock ticking.
+A Cli timer that prints like clock ticking.
+
+
+## removelines.py
+
+Remove certain line from a text file.
+
+```
+    rmdublicatelines(filepath)
+    # Remove duplicate lines from a (text) file.
+
+    rmlessthan(n, filepath)
+    # Remove lines with less than n (n = length of a character) numbers of characters from a file.
+```
