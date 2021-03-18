@@ -1,6 +1,4 @@
-# arl-py
-
-Automating the Boring Stuff with Python
+# boring-py : Automating the Boring Stuff with Python
 
 ↓ Read to know what each file does. ↓
 
