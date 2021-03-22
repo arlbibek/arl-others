@@ -14,7 +14,7 @@ NOTE: Edit source code to select different option.
 """)
 
 from time import sleep
-try: from pyautogu import write
+try: from pyautogui import write
 except ModuleNotFoundError as e:
     exit(f"{e}\nInstall 'pyautogui' first")
 
