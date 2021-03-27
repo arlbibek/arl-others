@@ -34,7 +34,7 @@ def getdirpath():
     while True:
         try:
             path = input('\nEnter directory (path)\n: ').strip()
-            if len(path) < 1: continue
+            if len(path) < 1: path = "."
             if isfile(path):
                 print(f"\n'{path}' is a file not a directory.")
                 continue
