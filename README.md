@@ -4,7 +4,10 @@
 
 ## addnum.py
 
+<details>
+<summary>
 Add an auto increment numbers on each lines of a text file.
+</summary>
 
 ```text
 Eg.
@@ -20,9 +23,14 @@ Eg.
         4. Yay Fourth
 ```
 
+</details>
+
 ## autowrtxt.py
 
+<details>
+<summary>
 Auto write text with `pyautogui`
+</summary>
 
 Options `(edit source code to select different option)`
 
@@ -36,6 +44,8 @@ Requirements:
 pyautogui
 pyperclip   # for Option 4
 ```
+
+</details>
 
 ## bored.py
 
@@ -55,7 +65,10 @@ Returns the list of every file in a directory tree.
 
 ## getpath.py
 
+<details>
+<summary>
 Get either file path or directory path from the user.
+</summary>
 
 ```python
 filepath()
@@ -65,26 +78,33 @@ dirpath()
 # Asks for a directory path to the user then, returns absolute path of the directory if it exists.
 ```
 
+</details>
+
 ## getyesno.py
 
 Returns `True` if input from the user is `yes`, `False` if `no`, that is all.
 
 ## refreshWin.py
 
-A simple and fun program that refresh windows any numbers of times you want.
+> Requirement: `pyautogui`
 
-```text
-Requirements: pyautogui
-```
+A simple and fun program that refresh windows any numbers of times you want.
 
 ## renamefiles.py
 
+<details>
+<summary>
 Rename all file on a folder to randomly generated 6 digit code.
+</summary>
 
 ```text
-Eg:
-    __fjdsl7439fRHzzt77UUvfTRe7362.png ==> 544305.png
+From:
+    __fjdsl7439fRHzzt77UUvfTRe7362.png
+To:
+    544305.png
 ```
+
+</details>
 
 ## sorttxt.py
 
@@ -96,7 +116,10 @@ A Cli timer that prints like clock ticking.
 
 ## removelines.py
 
+<details>
+<summary>
 Remove certain line from a text file.
+</summary>
 
 ```python
 rmdublicatelines(filepath)
@@ -106,9 +129,14 @@ rmlessthan(n, filepath)
 # Remove lines with less than n (n = length of a character) numbers of characters from a file.
 ```
 
+</details>
+
 ## sync_files.py
 
+<details>
+<summary>
 Move all files from a directory tree to single directory.
+</summary>
 
 ```text
 From:
@@ -135,6 +163,8 @@ To:
     |---file4
     |---file5
 ```
+
+</details>
 
 ---
 
