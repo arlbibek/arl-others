@@ -105,3 +105,37 @@ rmdublicatelines(filepath)
 rmlessthan(n, filepath)
 # Remove lines with less than n (n = length of a character) numbers of characters from a file.
 ```
+
+## sync_files.py
+
+Move all files from a directory tree to single directory.
+
+```text
+From:
+    src
+    |---dir1
+    |   |---file1
+    |   |---file2
+    |---dir2
+    |   |---dir3
+    |   |   |---dir3
+    |   |   |   |---file3
+    |   |   |   |---file4
+    |---dir4
+    |   |---file4
+    |   |---file5
+    |---file3
+    |---file5
+
+To:
+    dist
+    |---file1
+    |---file2
+    |---file3
+    |---file4
+    |---file5
+```
+
+---
+
+\# That is all.
