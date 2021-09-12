@@ -17,7 +17,8 @@ def getfiles(path):
         # ignore directories.
         ignore = ['.git', '__pycache__']
         for i in ignore:
-            if i in dirnames: dirnames.remove(i)
+            if i in dirnames:
+                dirnames.remove(i)
 
     return(allfiles)
 
@@ -27,14 +28,21 @@ if __name__ == '__main__':
         from os.path import abspath, exists, isdir
         '''Returns directory path provide by the user'''
         while True:
-            try: path = input("\nEnter directory path: ").strip()
-            except KeyboardInterrupt: exit('\nAbort!')
-            if len(path) < 1: path = "."
+            try:
+                path = input("\nEnter directory path: ").strip()
+            except KeyboardInterrupt:
+                exit('\nAbort!')
+            if len(path) < 1:
+                path = "."
             if exists(path):
-                if isdir(path): return(abspath(path))
-                else: print(f"'{path}' is not a directory path.")
-            else: print(f"Couldn't locate: {path}.")
+                if isdir(path):
+                    return(abspath(path))
+                else:
+                    print(f"'{path}' is not a directory path.")
+            else:
+                print(f"Couldn't locate: {path}.")
             print("Try again!")
 
     # printing list of files
-    for file in getfiles(getpath()): print(file)
+    for file in getfiles(getpath()):
+        print(file)

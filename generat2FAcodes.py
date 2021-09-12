@@ -5,6 +5,7 @@ print(f"""{__file__}
 The generated codes will be written into a text file.
 """)
 
+
 def generate(fname):
     """writes 6 digit Two Factor authentication codes to 'fname'"""
     with open(fname, 'wt') as fa:
