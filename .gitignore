@@ -1,6 +1,9 @@
 # added by arlbibek
-Misc arl-py/
+.vscode/
 random_images/
+2FA_code.txt
+test*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -55,14 +55,14 @@ Returns the list of every file in a directory tree.
 
 ## getpath.py
 
-Get either file path or directory path from the user.
+Get either file or directory path from the user.
 
 ```python
-filepath()
-# Ask for a file path to the user then, returns the absolute path of the file if it exist.
+getfilepath()
+# Returns the absolute path of a file.
 
-dirpath()
-# Asks for a directory path to the user then, returns absolute path of the directory if it exists.
+getdirpath()
+# Returns the absolute path of a directory.
 ```
 
 ## getyesno.py
