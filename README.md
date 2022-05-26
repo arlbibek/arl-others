@@ -142,6 +142,10 @@ To:
 
 Download random HD images from [picsum.photos](https://picsum.photos)
 
+## getInput.py
+
+Return a valid input from the user.
+
 ---
 
 \# That is all.
