@@ -1,102 +1,133 @@
-print(f"""{__file__}
+def get_input(msg="Enter", num=False):
+    """Return a valid input from the user.
 
-'''Add an auto increment numbers on each lines of a text file.'''
+    Use `msg="Your text here"` to display the input prompt to the user.
 
-From:
-    This is line one
-    This a second line
-    3. I'm line three
-    Yay Fourth
-To:
-    1. This is line one
-    2. This a second line
-    3. I'm line three
-    4. Yay Fourth
-""")
+    Use `num=True` parameter for a valid integer input. Please note that the input must be greater than 0.
 
+    Also, Entering `.exit` in the prompt will terminate the program in any given time.
+    """
 
-def getfilepath(msg="Enter file path: "):
-    '''Asks for a file path to the user then,
-    Returns absolute path of the file if the file exist.'''
-    from os.path import abspath, exists, isfile
     while True:
         try:
-            path = input(f"\n{msg}").strip().strip("'").strip('"')
+            user_input = input(f"{msg}: ").strip()
+            if user_input == ".exit":
+                exit("[ OK ] Exiting...")
+
+            if len(user_input) < 1:
+                print("[ Invalid input ] Please do not leave the fields empty..")
+                continue
+            if num:
+                try:
+                    user_input = int(user_input)
+
+                    # 'user_input' is to be greater than '0'
+                    if user_input > 1:
+                        print(
+                            f"[ Invalid input '{user_input}'] Added value must be greater than '0'. Please try again!")
+                        continue
+
+                except ValueError:
+                    print(
+                        f"[ Invalid input ] Entered value must be an integer.")
+                    continue
+            return user_input
         except KeyboardInterrupt:
-            exit('Abort!')
-        if len(path) < 1:
-            continue
+            exit("\n[ Keyboard Interrupt ] Exiting...")
+
+
+def get_filepath():
+    '''Returns absolute path of the file if the file exist.'''
+    from os.path import abspath, exists, isfile
+    while True:
+        path = get_input("Enter filepath")
         if exists(path):
             if isfile(path):
                 return(abspath(path))
             else:
-                print(f"'{path}' is not a file.")
+                print(f"[ error ] '{path}' is not a file.")
         else:
-            print(f"Couldn't locate file: {path}.")
+            print(f"[ error ] Couldn't locate file on: {path}")
+
         print("Try again!")
 
 
-def confirm(msg):
+def confirm(msg=""):
     '''Get confirmation from the user with "Press [RETURN] to continue.."'''
     print(msg)
     try:
-        input('Press [RETURN] to continue..')
+        input('Press [RETURN] to continue.')
         return True
     except KeyboardInterrupt:
         return False
 
 
-def addnum():
-    '''Add auto increment numbers on each lines of a text file'''
+def add_num(file):
+    """Adds an auto increment numbers on each lines of a file.
+
+    Eg.
+
+    ```text
+    From:
+        This is line one
+        This a second line
+        3. I'm line three
+        Yay Fourth
+    To:
+        1. This is line one
+        2. This a second line
+        3. I'm line three
+        4. Yay Fourth
+    ```"""
+
     from os.path import basename
 
-    file = getfilepath()
-
     lines_count = 0
-    changes_count = 0
+    change_count = 0
 
+    print("Reading file..")
     with open(file, 'rt', encoding="utf8") as fh:
         lines = fh.readlines()
         len_lines = len(lines)
         len_fill = len(str(len_lines))
 
-        print("Reading file..")
         for line in lines:
             num_fill = str(lines_count + 1).zfill(len_fill)
             if not line.startswith(num_fill):
                 lines[lines.index(line)] = f"{num_fill}. {line}"
-                changes_count += 1
+                change_count += 1
             lines_count += 1
 
     print(f"""
 # File details
 
-  File Path: {file}
-  File Name: {basename(file)}
-  Total Lines: {lines_count}
+  File path: {file}
+  File name: {basename(file)}
+  Total lines: {lines_count}
 """)
-    if not changes_count < 1 or not lines_count < 1:
-        # Confirmation
-        if not confirm(f"A sequence of numbers (1., 2., 3., and so on) will be added to each line of the file"):
-            exit("Abort!")
-        print()
 
-        # MAIN: adding the auto increment numbers before each lines of the text file
+    if not change_count < 1 or not lines_count < 1:
+
+        # confirmation
+        try:
+            print(
+                f"A sequence of numbers (1., 2., 3., and so on) will be added to each line of the file '{basename(file)}'")
+            input('Press [RETURN] to continue')
+        except KeyboardInterrupt:
+            exit("\n[ abort ] Exiting..")
+
+        # adding the auto increment numbers before each lines of the text file
         with open(file, 'wt', encoding="utf8") as fh:
             for line in lines:
                 fh.write(line)
-        return f"'{basename(file)}' file updated! [Changed '{changes_count}' line(s).]"
-    return "Noting to write!"
+        print(
+            f"[ done ] {basename(file)} file updated! (Changed {change_count} {'lines' if change_count > 1 else 'line'})")
+    else:
+        print(f"Noting to write on the file '{basename(file)}'")
 
 
 if __name__ == "__main__":
-    print(f"[ done ] {addnum()}")
-    try:
-        from time import sleep
-        print("Ending..")
-        sleep(2)
-    except Exception:
-        pass
+    file = get_filepath()
+    add_num(file)
 
-
-# The End.
+# Made with ❤️ by Bibek Aryal.
