@@ -2,7 +2,7 @@
 
 ↓ Read to know what each file does. ↓
 
-## addnum.py
+## add_num.py
 
 Add an auto increment numbers on each lines of a text file.
 
@@ -20,7 +20,7 @@ Eg.
         4. Yay Fourth
 ```
 
-## autowrtxt.py
+## auto_wr_txt.py
 
 Auto write text with `pyautogui`
 
@@ -41,19 +41,19 @@ pyperclip   # for Option 4
 
 Run this if you get bored!
 
-## createfile.py
+## create_file.py
 
 Instantly create a file of any size (in GB).
 
-## generat2FAcodes.py
+## generate_2fa_codes.py
 
 Instantly create a text file with 6 digit two factor authentication codes.
 
-## getfiles.py
+## get_files.py
 
 Returns the list of every file in a directory tree.
 
-## getpath.py
+## get_path.py
 
 Get either file or directory path from the user.
 
@@ -65,7 +65,7 @@ getdirpath()
 # Returns the absolute path of a directory.
 ```
 
-## getyesno.py
+## get_yes_no.py
 
 Returns `True` if input from the user is `yes`, `False` if `no`, that is all.
 
@@ -75,7 +75,7 @@ Returns `True` if input from the user is `yes`, `False` if `no`, that is all.
 
 A simple and fun program that refresh windows any numbers of times you want.
 
-## renamefiles.py
+## rename_files.py
 
 Rename all file on a folder to randomly generated 6 digit code.
 
@@ -86,23 +86,23 @@ To:
     544305.png
 ```
 
-## sorttxt.py
+## sort_txt.py
 
 Sort contents of a text file into ascending or descending order.
 
 ## timer.py
 
-A Cli timer that prints like clock ticking.
+A cli timer that prints like clock ticking.
 
-## removelines.py
+## remove_lines.py
 
 Remove certain line from a text file.
 
 ```python
-rmdublicatelines(filepath)
+rm_duplicate_lines(filepath)
 # Remove duplicate lines from a (text) file.
 
-rmlessthan(n, filepath)
+rm_less_than(n, filepath)
 # Remove lines with less than n (n = length of a character) numbers of characters from a file.
 ```
 
@@ -136,13 +136,13 @@ To:
     |---file5
 ```
 
-## images-dl.py
+## images_dl.py
 
 > Requirement: `requests`
 
 Download random HD images from [picsum.photos](https://picsum.photos)
 
-## getInput.py
+## get_input.py
 
 Return a valid input from the user.
 

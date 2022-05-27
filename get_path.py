@@ -4,7 +4,7 @@ print(f"""{__file__}
 """)
 
 
-def getfilepath(msg="Enter file path: "):
+def get_file_path(msg="Enter file path: "):
     '''Asks for a file path to the user then,
     Returns absolute path of the file if the file exist.'''
     from os.path import abspath, exists, isfile
@@ -25,7 +25,7 @@ def getfilepath(msg="Enter file path: "):
         print("Try again!")
 
 
-def getdirpath(msg="Enter file path: "):
+def get_dir_path(msg="Enter file path: "):
     '''Asks for a directory path to the user then,
     Returns absolute path of the directory if the directory exists.'''
     from os.path import abspath, exists, isdir
@@ -47,7 +47,7 @@ def getdirpath(msg="Enter file path: "):
 
 
 # TEST
-def getOption():
+def get_option():
 
     menu = {}
     menu[1] = 'Get file path'
@@ -77,13 +77,13 @@ def getOption():
 if __name__ == "__main__":
     from os.path import basename
 
-    choosen = getOption()
+    chosen = get_option()
 
-    if choosen == 1:
-        path = getfilepath()
+    if chosen == 1:
+        path = get_file_path()
         print(f"\nFile path: {path}\nFile name: {basename(path)}")
-    elif choosen == 2:
-        path = getdirpath()
+    elif chosen == 2:
+        path = get_dir_path()
         print(f"\nDirectory path: {path}\nDirectory name: {basename(path)}")
     else:
         exit('Bye..')
