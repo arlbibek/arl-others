@@ -144,8 +144,12 @@ Download random HD images from [picsum.photos](https://picsum.photos)
 
 ## get_input.py
 
-Return a valid input from the user.
+Returns a valid input from the user.
+
+## type_wr
+
+Prints string in a type writer effect.
 
 ---
 
-\# That is all.
+Made with ❤️ by [Bibek Aryal](https://bibeka.com.np/).
