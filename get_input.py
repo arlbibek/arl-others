@@ -1,4 +1,4 @@
-def getInput(msg="Enter", num=False):
+def get_input(msg="Enter", num=False):
     """Return a valid input from the user.
 
     Use `msg="Your text here"` to display the input prompt to the user.
@@ -37,5 +37,5 @@ def getInput(msg="Enter", num=False):
 
 
 if __name__ == "__main__":
-    user_input = getInput("Hi, how are you?")
+    user_input = get_input("Hi, how are you?")
     print("The user says,", user_input)
