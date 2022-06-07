@@ -58,10 +58,10 @@ Returns the list of every file in a directory tree.
 Get either file or directory path from the user.
 
 ```python
-getfilepath()
+get_filepath()
 # Returns the absolute path of a file.
 
-getdirpath()
+get_dirpath()
 # Returns the absolute path of a directory.
 ```
 
