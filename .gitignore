@@ -2,7 +2,7 @@
 .vscode/
 random_images/
 2FA_code.txt
-test*
+*test*
 
 
 # Byte-compiled / optimized / DLL files
