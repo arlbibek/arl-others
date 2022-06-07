@@ -1,36 +1,37 @@
-def timer(time, msg=''):
-    '''Prints like clock ticking'''
+def timer(seconds, msg='Timer:'):
+    '''Prints like clock ticking.
+    Use optional argument `msg` to print message such as 'Please wait' '''
     from time import sleep
-    time_count = time
+
+    time_count = seconds
+
     try:
         fill = len(str(time_count))
-        for _ in range(1, time + 1):
+        for _ in range(1, seconds + 1):
             print(
-                f"{msg} {str(time_count).zfill(fill)}/{str(time).zfill(fill)} sec..", end='\r')
+                f"{msg} {str(time_count).zfill(fill)}/{str(seconds).zfill(fill)} sec..", end='\r')
             sleep(1)
             time_count -= 1
-        print(f"{msg} {time_count}/{time} sec..", end='\r')
+        print(f"{msg} {time_count}/{seconds} sec..", end='\r')
         print()
-    except KeyboardInterrupt as e:
-        print(e)
+        print(f"[ done ] {seconds} sec completed!")
+    except KeyboardInterrupt:
+        print(
+            f"\n[ Keyboard Interrupt ] '{timer.__name__}' function stopped.")
 
 
 if __name__ == '__main__':
     from sys import argv
-    print(f"\n\t'''Prints like clock ticking'''\n")
+
     while True:
-        if len(argv) > 1:
-            try:
-                timer(int(argv[-1]), 'Timer:')
-                print('[ Done ] ')
-                break
-            except ValueError as e:
-                pass
         try:
-            timer(int(input('Insert time in seconds\n: ')), 'Timer:')
-            print('[ Done ] ')
-            break
-        except ValueError as e:
-            break
+            if len(argv) > 1:
+                timer(int(argv[-1]), 'Timer:')
+                break
+            else:
+                timer(int(input('Insert time in seconds\n: ')), 'Timer:')
+                break
+        except ValueError:
+            print(f"\n[ Value Error ] Input should be an integer.")
         except KeyboardInterrupt:
-            break
+            exit(f"\n[ Keyboard Interrupt ] Exited!")
