@@ -11,8 +11,9 @@ def get_input(msg="Enter", num=False):
     while True:
         try:
             user_input = input(f"{msg}: ").strip()
+
             if user_input == ".exit":
-                exit("[ OK ] Exiting...")
+                exit("[ OK ] Aborted!")
 
             if len(user_input) < 1:
                 print("[ Invalid input ] Please do not leave the fields empty..")
@@ -22,7 +23,7 @@ def get_input(msg="Enter", num=False):
                     user_input = int(user_input)
 
                     # 'user_input' is to be greater than '0'
-                    if user_input > 1:
+                    if user_input < 1:
                         print(
                             f"[ Invalid input '{user_input}'] Added value must be greater than '0'. Please try again!")
                         continue
@@ -33,7 +34,8 @@ def get_input(msg="Enter", num=False):
                     continue
             return user_input
         except KeyboardInterrupt:
-            exit("\n[ Keyboard Interrupt ] Exiting...")
+            print("\n[ Keyboard Interrupt ] Returned 'None'")
+            return None
 
 
 if __name__ == "__main__":
