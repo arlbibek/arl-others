@@ -50,7 +50,7 @@ Run this if you get bored!
 
 ## create_file.py
 
-Instantly create a file of any size (in GB).
+Instantly create a file of any size.
 
 ## generate_2fa_codes.py
 
