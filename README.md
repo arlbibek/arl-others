@@ -20,6 +20,11 @@ Eg.
         4. Yay Fourth
 ```
 
+```text
+# local dependencies
+get_filepath() from get_path.py
+```
+
 ## auto_wr_txt.py
 
 Auto write text with `pyautogui`
@@ -148,7 +153,7 @@ Download random HD images from [picsum.photos](https://picsum.photos)
 
 Returns a valid input from the user.
 
-## type_wr
+## type_wr.py
 
 Prints string in a type writer effect.
 

@@ -1,65 +1,4 @@
-def get_input(msg="Enter", num=False):
-    """Return a valid input from the user.
-
-    Use `msg="Your text here"` to display the input prompt to the user.
-
-    Use `num=True` parameter for a valid integer input. Please note that the input must be greater than 0.
-
-    Also, Entering `.exit` in the prompt will terminate the program in any given time.
-    """
-
-    while True:
-        try:
-            user_input = input(f"{msg}: ").strip()
-            if user_input == ".exit":
-                exit("[ OK ] Exiting...")
-
-            if len(user_input) < 1:
-                print("[ Invalid input ] Please do not leave the fields empty..")
-                continue
-            if num:
-                try:
-                    user_input = int(user_input)
-
-                    # 'user_input' is to be greater than '0'
-                    if user_input > 1:
-                        print(
-                            f"[ Invalid input '{user_input}'] Added value must be greater than '0'. Please try again!")
-                        continue
-
-                except ValueError:
-                    print(
-                        f"[ Invalid input ] Entered value must be an integer.")
-                    continue
-            return user_input
-        except KeyboardInterrupt:
-            exit("\n[ Keyboard Interrupt ] Exiting...")
-
-
-def get_filepath():
-    '''Returns absolute path of the file if the file exist.'''
-    from os.path import abspath, exists, isfile
-    while True:
-        path = get_input("Enter filepath")
-        if exists(path):
-            if isfile(path):
-                return(abspath(path))
-            else:
-                print(f"[ error ] '{path}' is not a file.")
-        else:
-            print(f"[ error ] Couldn't locate file on: {path}")
-
-        print("Try again!")
-
-
-def confirm(msg=""):
-    '''Get confirmation from the user with "Press [RETURN] to continue.."'''
-    print(msg)
-    try:
-        input('Press [RETURN] to continue.')
-        return True
-    except KeyboardInterrupt:
-        return False
+from get_path import get_filepath
 
 
 def add_num(file):
@@ -113,21 +52,26 @@ def add_num(file):
             print(
                 f"A sequence of numbers (1., 2., 3., and so on) will be added to each line of the file '{basename(file)}'")
             input('Press [RETURN] to continue')
-        except KeyboardInterrupt:
-            exit("\n[ abort ] Exiting..")
 
-        # adding the auto increment numbers before each lines of the text file
-        with open(file, 'wt', encoding="utf8") as fh:
-            for line in lines:
-                fh.write(line)
-        print(
-            f"[ done ] {basename(file)} file updated! (Changed {change_count} {'lines' if change_count > 1 else 'line'})")
+            # adding the auto increment numbers before each lines of the text file
+            with open(file, 'wt', encoding="utf8") as fh:
+                for line in lines:
+                    fh.write(line)
+            print(
+                f"[ done ] {basename(file)} file updated! (Changed {change_count} {'lines' if change_count > 1 else 'line'})")
+        except KeyboardInterrupt:
+            print(
+                f"\n[ Keyboard Interrupt ] '{add_num.__name__}' function stopped.")
+
     else:
         print(f"Noting to write on the file '{basename(file)}'")
 
 
 if __name__ == "__main__":
     file = get_filepath()
-    add_num(file)
+    if file is None:
+        print(f"Got '{file}' from the user. Exiting...")
+    else:
+        add_num(file)
 
 # Made with ❤️ by Bibek Aryal.
