@@ -24,17 +24,19 @@ Eg.
 
 Auto write text with `pyautogui`
 
-Options `(edit source code to select different option)`
+Options
 
-1. Write contents of a text file
-2. Write contents of the text provided by you
-3. Write contains of this file
-4. Write contains of the clipboard! (default)
+1. Write contains of the clipboard.
+2. Write contents of a text file.
+3. Write contents of the text provided by the user.
 
 ```text
-Requirements:
-pyautogui
-pyperclip   # for Option 4
+# Requirements
+pyautogui & pyperclip
+
+# local dependencies
+get_input() from get_input.py
+get_filepath() from get_path.py
 ```
 
 ## bored.py
