@@ -1,11 +1,13 @@
+"""
+Run this when you're bored.
+"""
+import webbrowser as wb
+
+
 def bored():
-    from webbrowser import open
+    """Let's say you are bored, run this and you won't be. No promises though. """
     print("Hi I'm bored to.")
-    open('https://youtu.be/dQw4w9WgXcQ')
-    try:
-        input()
-    except:
-        pass
+    wb.open("https://youtu.be/dQw4w9WgXcQ")
 
 
 if __name__ == "__main__":
