@@ -157,6 +157,12 @@ Returns a valid input from the user.
 
 Prints string in a type writer effect.
 
+## get_wifi_passwd_win.py
+
+Returns all know wireless networks and their respective passwords from the host device (works on windows only).
+
+Referenced from [David Bombal](https://youtu.be/SzYKzAHsdMg "Python WiFi")
+
 ---
 
 Made with ❤️ by [Bibek Aryal](https://bibeka.com.np/).
