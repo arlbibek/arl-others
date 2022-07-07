@@ -34,8 +34,21 @@ def get_input(msg="Enter", num=False):
                     continue
             return user_input
         except KeyboardInterrupt:
-            print("\n[ Keyboard Interrupt ] Returned 'None'")
-            return None
+            try:
+                print("[ Keyboard Interrupt ]", end=" ")
+                while True:
+                    ans = input(
+                        f'Are you sure you want to terminate? [Y/n] ').lower().strip()
+                    if ans in ['y', 'yes']:
+                        exit("[ Aborted! ]")
+                    elif ans in ['n', 'no']:
+                        break
+                    else:
+                        print(
+                            "[ Invalid input ] Please try again with either 'Yes' or 'No'")
+                        continue
+            except KeyboardInterrupt:
+                exit("[ Aborted! ]")
 
 
 if __name__ == "__main__":
